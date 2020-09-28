@@ -1,0 +1,78 @@
+az-splunk-sept-2020
+
+1 2 3 4567890
+============================
+9:30 AM IST - 5:00 PM - 5:30 PM
+==============================
+Lunch hour - 12:30 - 1:30 PM
+Break - each 15 mins..
+		- 11:00 AM
+		- 3:00 PM 
+==================================
+Demo - AWS
+LAB - AWS
+==================================
+8105843520
+================
+Rajesh Kumar
+===========================
+Mine - 65.0.27.220
+username- centos
+Key - 
+======================
+How to download and install Splunk in Linux?
+
+ 10  yum install wget -y
+   11  wget https://download.splunk.com/products/splunk/releases/8.0.6/linux/splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz
+
+   15  tar -zxvf splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz
+ 
+   18  cd splunk
+   22  cd bin
+   30  ./splunk start --accept-license
+ 
+   39  history
+
+==========================
+Authentication Methods
+ - How to get into tool?
+		Internal	DEFAULT
+		LDAP
+		SAML
+
+		Duo Security
+		RSA Security
+
+authorization Method?
+- What you are allowed?
+		RBAC
+
+rajesh
+rajesh123
+
+index=_audit action=log* info=fail* | stats count by user | sort - count
+
+Reshman Rezvana K	13.234.31.26
+Kumar Swamy Payla	15.207.254.127
+Raghavendra		15.207.110.103
+Rajesh S		13.232.5.221	
+Vishwanath Venkatachalam	13.235.75.49
+Panthadi Varma		13.232.173.1
+Nimalmadhan		52.66.242.37
+Sedhu Madhavan Vetrivel	65.0.6.159
+Maha krishnan		13.126.227.235
+Jayaram Ravipudi	13.233.152.182
+
+Lab - 
+- Download and Install Splunk in Linux?
+- Upload data
+- Get Comfortable with Splunk UI
+
+Lab Module 3 – Install Splunk Enterprise
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module3.html
+
+Lab Module 4 – Ingesting Data
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module4.html
+
+
+
