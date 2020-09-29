@@ -1,0 +1,104 @@
+MINE 0 15.206.165.112
+
+
+
+
+Reshman Rezvana K		3.7.254.89
+Kumar Swamy Payla		35.154.145.237
+Raghavendra			15.206.211.205
+Rajesh S			13.235.82.110	
+Vishwanath Venkatachalam	13.234.75.187
+Panthadi Varma			13.235.82.185
+Nimalmadhan			13.127.7.87
+Sedhu Madhavan Vetrivel		15.207.222.87
+Maha krishnan			52.66.249.65
+Jayaram Ravipudi		13.232.119.105
+Praveen kumar Myla		13.232.255.251
+Dina Wilson			15.207.89.171
+
+
+homeworkdataset.csv
+
+source="homeworkdataset.csv" host="ip-172-31-4-120.ap-south-1.compute.internal" index="home" sourcetype="csv"
+
+===TOP=======
+
+index="home" state=* level=critical | top state by level
+index="home" state=* level=critical | top usr by level
+index="home" state=* | top domain limit=2 
+index="home" state=* | top usr
+index="home" state=* | Top level
+index="home" state=* level=critical | top state
+index="home" state=* level=critical | top state by level showcount=f
+index="home" state=* level=critical | top state by level showperc=f 
+index="home" state=* level=critical | top state by level limit=2
+index="home" state=* level=critical | top state by level countfield="MyState"
+
+showcount
+showperc
+limit
+countfield
+percentfield
+
+host=HOME state=* level=critical | top state by level
+host=HOME state=* level=critical | top usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top limit=2 domain
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| top limit=20 usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" | top level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical 
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top state by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* | top usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | top usr by level
+===RARE=======
+host=HOME state=* level=critical | rare state by level
+host=HOME state=* level=critical | rare usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare limit=2 domain
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv"| rare limit=20 usr
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" | rare level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical 
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare state by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* | rare usr by level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* level=critical | rare usr by level
+
+===STATS=======
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr)
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort -NumOfUser
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort NumOfUser
+
+===STATS=======
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr)
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort -NumOfUser
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | stats count(usr) AS NumOfUser BY state 
+| sort NumOfUser
+
+
+
+index="home" state=* level=critical | stats count(usr)
+
+index="index1" | stats avg(bytes)
+
+===TABLE=======
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level state
+source="homeworkdataset.csv" host="HOME" index="home" sourcetype="csv" state=* usr=* | table level state usr
+
+
+
+Lab - 
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/
+Splunk Fundamental - Lab Module 8 – Basic Commands
+Splunk Fundamental - Lab Module 9 – Transforming Commands
+
+
+
+
+
