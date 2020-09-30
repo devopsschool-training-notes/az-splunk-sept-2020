@@ -1,0 +1,65 @@
+Instance 1 - Indexer + Parser = 65.0.27.24
+============================================
+
+$ sudo-s
+$ cd /opt
+$ wget https://download.splunk.com/products/splunk/releases/8.0.6/linux/splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz
+
+$ tar -zxvf splunk-8.0.6-152fb4b2bb96-Linux-x86_64.tgz
+$ cd splunk
+$ cd bin
+$ ./splunk start --accept-license 
+http://65.0.27.24:8000/
+admin/admin123
+
+------------------------------------
+--------------
+Step 1. Settings => Monitoring console => Setting => Forwarder Monitoring Setup => Forwarder Monitoring (ENABLE with 15 mins)
+Step 2. Settings => Forwarding and Recieving => Receive data => Add New ==> Listen on this port (For example, 9997 will receive data on TCP port 9997)
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+
+
+Instance 2 - Universal Forwarder = 35.154.71.104
+================================================================
+
+Setting up input.conf
+$ ./bin/splunk list monitor 
+$ ./bin/splunk add monitor /var/log
+$ ./bin/splunk add monitor /var/log/syslogs -sourcetype linux -index rajesh
+$ ./splunk add monitor /root/demo.csv -sourcetype home -index home
+$ ./bin/splunk list forward-server
+
+
+Setting up output.conf
+$ ./bin/splunk add forward-server 65.0.27.24:9997 --accept-license
+$ ./bin/splunk add forward-server 65.0.27.24:9997 
+$ ./bin/splunk list forward-server
+
+
+
+
+Instance 3 - Search head	= 65.0.11.172
+
+
+
+
+Reshman Rezvana K		
+Kumar Swamy Payla	13.233.104.74	35.154.220.66	
+Raghavendra		13.127.13.127	3.7.46.234	
+Rajesh S			13.234.30.147	13.232.202.78
+Vishwanath Venkatachalam		65.0.27.24	65.0.11.172
+Panthadi Varma			15.207.247.188	15.207.19.135	
+Nimalmadhan			13.232.120.197	13.233.199.23		
+Sedhu Madhavan Vetrivel		13.232.222.197	13.233.255.120
+Maha krishnan			65.0.11.5	13.233.118.98		
+Jayaram Ravipudi		13.232.105.66	35.154.73.125	
+Praveen kumar Myla		13.232.105.154	13.232.25.185	
+Dina Wilson			13.233.73.154	15.207.99.18	
+Dinesh				13.232.189.91	13.233.156.98
+Sathiyabarathi kathirvel	15.207.71.89	3.7.252.42
+
+
+
+
+
